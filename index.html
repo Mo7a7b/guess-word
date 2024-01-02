@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, user-scalable=no">
+    <link rel="icon" href="./favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <title>Guess Word</title>
+</head>
+
+<body>
+    <div id="startMenu">
+        <img width="400" src="menuLogo.png" alt="">
+        <button onclick="startGame()">Start Game</button>
+        <button onclick="openSettings()">Settings</button>
+    </div>
+    <div id="settingsMenu" style="display:none;">
+        <h1>Game Settings</h1>
+        <div><label for="timeInput">Time:</label>
+            <select id="timeSelect">
+                <option value="90">01:30</option>
+                <option selected value="180">03:00</option>
+                <option value="300">05:00</option>
+            </select> minutes
+        </div>
+
+        <br>
+        <div>
+            <label for="difficultySelect">Difficulty:</label>
+            <select id="difficultySelect">
+                <option value="easy">Easy</option>
+                <option selected value="medium">Medium</option>
+                <option value="hard">Hard</option>
+            </select>
+        </div>
+
+        <br>
+        <button id="apply" onclick="applySettings()">Apply</button>
+        <button onclick="closeSettings()">Close</button>
+    </div>
+
+    <h1 class="nav"></h1>
+    <div id="timer">03:00</div>
+    <div class="guess-game">
+        <div class="game-area">
+            <div class="inputs"></div>
+            <div class="control">
+                <button onclick="checkWord()" class="check">Check Word</button>
+                <button onclick="giveHint()" class="hint"><span id="noh"></span> Hints</button>
+            </div>
+
+        </div>
+        <div class="key-colors">
+            <h2>Key Colors</h2>
+            <div class="key-color">
+                <div class="key in-place"></div>
+                <div class="key-text">Letter is Correct and In Place</div>
+            </div>
+            <div class="key-color">
+                <div class="key not-in-place"></div>
+                <div class="key-text">Letter is Correct But Not In Place</div>
+            </div>
+            <div class="key-color">
+                <div class="key no"></div>
+                <div class="key-text">Letter is Wrong And Not Exists in Word</div>
+            </div>
+        </div>
+    </div>
+
+    <footer></footer>
+</body>
+<script src="guess.js"></script>
+
+</html>
