@@ -348,7 +348,7 @@ function checkWin() {
             }
         })
         input.onchange = () => {
-
+            document.querySelector(".check").disabled = true
             let icon = document.querySelector(".ic")
             if (icon) icon.remove()
 
@@ -359,6 +359,7 @@ function checkWin() {
             }
             // Win
             if (inputStr.toUpperCase() === randomWord.toUpperCase()) {
+                
                 clearInterval(timerInterval)
                 let checkDiv = document.querySelector(".check-div")
                 let inputs = document.querySelectorAll(".check-div input")

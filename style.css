@@ -526,6 +526,11 @@ button {
     }
 }
 
+.check:disabled {
+    background-color: grey;
+    cursor: default;
+}
+
 @media screen and (max-width:300px) {
     .game-area {
         scale: 0.5;
